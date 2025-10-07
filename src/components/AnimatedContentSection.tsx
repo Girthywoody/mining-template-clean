@@ -12,17 +12,17 @@ const AnimatedContentSection = () => {
     {
       title: 'Custom Website Development',
       description: 'Build responsive, professional websites that showcase your business and convert visitors into customers.',
-      image: '/images/construction-technology.jpg',
+      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     },
     {
       title: 'Digital Strategy & Planning',
       description: 'Strategic consultation to help you maximize your online presence and achieve your business goals.',
-      image: '/images/innovation-unique.jpg',
+      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     },
     {
       title: 'Brand Identity & Design',
       description: 'Create a cohesive visual identity that reflects your brand values and builds trust with your audience.',
-      image: '/images/community-unique.jpg',
+      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     },
   ];
 

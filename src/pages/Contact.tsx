@@ -5,11 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import ContextAwareNavigation from "@/components/ContextAwareNavigation";
 import Footer from "@/components/Footer";
 import useScrollAnimation from "@/hooks/use-scroll-animation";
-const contactHero = "/contact-hero-mining.jpg";
-const ctaBackground = "/cta-unique.jpg";
+const contactHero = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const ctaBackground = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -129,7 +129,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <ContextAwareNavigation />
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">

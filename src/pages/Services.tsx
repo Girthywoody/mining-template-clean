@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mountain, Shield, Leaf, Users, Wrench, Truck, BarChart3, Globe, CheckCircle } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import ContextAwareNavigation from "@/components/ContextAwareNavigation";
 import Footer from "@/components/Footer";
 import useScrollAnimation from "@/hooks/use-scroll-animation";
-const servicesHero = "/services-hero-mining.jpg";
-const operationsImage = "/operations-unique.jpg";
-const technologyImage = "/technology-unique.jpg";
-const communityImage = "/community-unique.jpg";
+const servicesHero = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const operationsImage = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const technologyImage = "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const communityImage = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
 
 const Services = () => {
   const processRef = useScrollAnimation();
@@ -154,7 +154,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <ContextAwareNavigation />
       
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">

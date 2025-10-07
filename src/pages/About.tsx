@@ -1,20 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mountain, Shield, Leaf, Users, Award, Target, Globe, Heart } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import ContextAwareNavigation from "@/components/ContextAwareNavigation";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import useScrollAnimation from "@/hooks/use-scroll-animation";
 import { useTranslation } from "@/hooks/useTranslation";
-const aboutHero = "/about-hero-mining.jpg";
-const leadershipImage = "/leadership-unique.jpg";
-const innovationImage = "/innovation-unique.jpg";
-const sustainabilityImage = "/sustainability-unique.jpg";
-const safetyImage = "/safety-unique.jpg";
-const michaelThompsonPortrait = "/michael-thompson-portrait.jpg";
-const sarahChenPortrait = "/sarah-chen-portrait.jpg";
-const davidRodriguezPortrait = "/david-rodriguez-portrait.jpg";
-const emilyJohnsonPortrait = "/emily-johnson-portrait.jpg";
+const aboutHero = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const leadershipImage = "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const innovationImage = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const sustainabilityImage = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const safetyImage = "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const michaelThompsonPortrait = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80";
+const sarahChenPortrait = "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80";
+const davidRodriguezPortrait = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80";
+const emilyJohnsonPortrait = "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80";
 
 const About = () => {
   const missionRef = useScrollAnimation();
@@ -113,7 +113,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background snap-container">
       <ScrollProgress />
-      <Navigation />
+      <ContextAwareNavigation />
       
       {/* Hero Section */}
       <section id="hero" className="snap-section relative h-screen flex items-center justify-center overflow-hidden">

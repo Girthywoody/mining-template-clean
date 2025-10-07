@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mountain, MapPin, Calendar, Users, Award, TrendingUp, Globe, Shield } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import ContextAwareNavigation from "@/components/ContextAwareNavigation";
 import Footer from "@/components/Footer";
 import useScrollAnimation from "@/hooks/use-scroll-animation";
-const projectsHero = "/projects-hero-mining.jpg";
-const project1Image = "/project1-unique.jpg";
-const project2Image = "/project2-unique.jpg";
-const project3Image = "/project3-unique.jpg";
-const project4Image = "/project4-unique.jpg";
+const projectsHero = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const project1Image = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const project2Image = "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const project3Image = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const project4Image = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
 
 const Projects = () => {
   const projectsRef = useScrollAnimation();
@@ -152,7 +152,7 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <ContextAwareNavigation />
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">

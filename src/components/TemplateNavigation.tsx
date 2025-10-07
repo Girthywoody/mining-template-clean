@@ -22,12 +22,12 @@ const TemplateNavigation = ({ templateType }: TemplateNavigationProps) => {
   const { language, toggleLanguage } = useLocalization();
 
   const navLinks = [
-    { to: templateType === 'mining' ? "/templates/modern-mining" : "/templates/premium-construction", label: t('nav.home') },
-    { to: templateType === 'mining' ? "/templates/modern-mining/about" : "/templates/premium-construction/about", label: t('nav.about') },
-    { to: templateType === 'mining' ? "/templates/modern-mining/services" : "/templates/premium-construction/services", label: t('nav.services') },
-    { to: templateType === 'mining' ? "/templates/modern-mining/projects" : "/templates/premium-construction/projects", label: t('nav.projects') },
-    { to: templateType === 'mining' ? "/templates/modern-mining/news" : "/templates/premium-construction/news", label: t('nav.news') },
-    { to: templateType === 'mining' ? "/templates/modern-mining/contact" : "/templates/premium-construction/contact", label: t('nav.contact') },
+    { to: "/", label: t('nav.home') },
+    { to: "/about", label: t('nav.about') },
+    { to: "/services", label: t('nav.services') },
+    { to: "/projects", label: t('nav.projects') },
+    { to: "/news", label: t('nav.news') },
+    { to: "/contact", label: t('nav.contact') },
   ];
 
   return (

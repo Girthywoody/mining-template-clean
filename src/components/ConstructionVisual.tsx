@@ -12,8 +12,8 @@ const ConstructionVisual: React.FC<ConstructionVisualProps> = ({ variant, classN
         return (
           <div className="w-full h-full relative overflow-hidden">
             <img 
-              src="/images/construction-hero.jpg"
-              alt="Construction site with crane and building skyline"
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Mining operations with heavy equipment"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
@@ -24,8 +24,8 @@ const ConstructionVisual: React.FC<ConstructionVisualProps> = ({ variant, classN
         return (
           <div className="w-full h-full relative overflow-hidden">
             <img 
-              src="/images/construction-equipment.jpg"
-              alt="Construction equipment and heavy machinery"
+              src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Mining equipment and heavy machinery"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -36,8 +36,8 @@ const ConstructionVisual: React.FC<ConstructionVisualProps> = ({ variant, classN
         return (
           <div className="w-full h-full relative overflow-hidden">
             <img 
-              src="/images/construction-site.jpg"
-              alt="Active construction site with workers"
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Active mining site with workers"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -48,8 +48,8 @@ const ConstructionVisual: React.FC<ConstructionVisualProps> = ({ variant, classN
         return (
           <div className="w-full h-full relative overflow-hidden">
             <img 
-              src="/images/construction-technology.jpg"
-              alt="Modern construction technology and smart city"
+              src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Modern mining technology and automation"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -60,8 +60,8 @@ const ConstructionVisual: React.FC<ConstructionVisualProps> = ({ variant, classN
         return (
           <div className="w-full h-full relative overflow-hidden">
             <img 
-              src="/images/construction-team.jpg"
-              alt="Construction team collaboration and planning"
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Mining team collaboration and planning"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>

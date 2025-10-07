@@ -1,19 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, User, ArrowRight, Tag, Clock, Share2 } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import ContextAwareNavigation from "@/components/ContextAwareNavigation";
 import Footer from "@/components/Footer";
 import useScrollAnimation from "@/hooks/use-scroll-animation";
-const newsHero = "/news-hero-mining.jpg";
-const newsDiscovery = "/news-discovery.jpg";
-const newsSafety = "/news-safety.jpg";
-const newsEnvironment = "/news-environment.jpg";
-const newsCommunity = "/news-community.jpg";
-const newsAutomation = "/news-automation.jpg";
-const newsWater = "/news-water.jpg";
-const newsIndigenous = "/news-indigenous.jpg";
-const newsTraining = "/news-training.jpg";
-const newsRenewable = "/news-renewable.jpg";
+const newsHero = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const newsDiscovery = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const newsSafety = "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const newsEnvironment = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const newsCommunity = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const newsAutomation = "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const newsWater = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const newsIndigenous = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const newsTraining = "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
+const newsRenewable = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
 
 const News = () => {
   const newsRef = useScrollAnimation();
@@ -125,7 +125,7 @@ const News = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <ContextAwareNavigation />
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
