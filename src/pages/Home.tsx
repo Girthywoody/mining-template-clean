@@ -1,195 +1,228 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Zap, Users, Award, Globe } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Mountain, Shield, Leaf, Users, ChevronRight, Quote, Star, Award, TrendingUp } from "lucide-react";
+import MiningNavigation from "@/components/MiningNavigation";
+import Footer from "@/components/Footer";
+import useScrollAnimation from "@/hooks/use-scroll-animation";
+import { useTranslation } from "@/hooks/useTranslation";
+
+const heroBg = "/Mining-hp.jpg";
+const miningEquipment = "/construction-equipment.jpg";
+const safetyImage = "/innovation-unique.jpg";
+const environmentalImage = "/community-unique.jpg";
+const innovationImage = "/innovation-unique.jpg";
+const ctaBackground = "/construction-hero.jpg";
 
 const Home = () => {
+  const servicesRef = useScrollAnimation();
+  const statsRef = useScrollAnimation();
+  const testimonialsRef = useScrollAnimation();
+  const featuresRef = useScrollAnimation();
+  const { t } = useTranslation();
+
+  // Set theme for mining template
+  useEffect(() => {
+    localStorage.setItem('website-theme', 'simple');
+  }, []);
+
+  const services = [
+    {
+      icon: Mountain,
+      title: t('templates.home.services.mineExploration.title'),
+      description: t('templates.home.services.mineExploration.description'),
+      image: miningEquipment,
+      color: "from-blue-500 to-blue-700",
+    },
+    {
+      icon: Shield,
+      title: t('templates.home.services.safetyFirst.title'),
+      description: t('templates.home.services.safetyFirst.description'),
+      image: safetyImage,
+      color: "from-green-500 to-green-700",
+    },
+    {
+      icon: Leaf,
+      title: t('templates.home.services.sustainableOperations.title'),
+      description: t('templates.home.services.sustainableOperations.description'),
+      image: environmentalImage,
+      color: "from-emerald-500 to-emerald-700",
+    },
+  ];
+
+  const stats = [
+    { number: "25+", label: "Years Experience" },
+    { number: "150+", label: "Projects Completed" },
+    { number: "98%", label: "Safety Record" },
+    { number: "24/7", label: "Support" },
+  ];
+
+  const testimonials = [
+    {
+      quote: "Sudbury Mining Corp. has been our trusted partner for over a decade. Their commitment to safety and environmental responsibility is unmatched.",
+      author: "Sarah Johnson",
+      position: "Project Manager, Global Resources",
+      rating: 5,
+    },
+    {
+      quote: "The innovative technology and sustainable practices implemented by Sudbury Mining Corp. have revolutionized our operations.",
+      author: "Michael Chen",
+      position: "Operations Director, EcoMine Ltd.",
+      rating: 5,
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-blue-400">
-              Sudbury Mining Corp.
-            </div>
-            <div className="hidden md:flex space-x-8">
-              <a href="#home" className="hover:text-blue-400 transition-colors">Home</a>
-              <a href="#about" className="hover:text-blue-400 transition-colors">About</a>
-              <a href="#services" className="hover:text-blue-400 transition-colors">Services</a>
-              <a href="#projects" className="hover:text-blue-400 transition-colors">Projects</a>
-              <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+    <div className="min-h-screen bg-background">
+      <MiningNavigation />
+      
       {/* Hero Section */}
-      <section id="home" className="pt-20 min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Professional Mining Solutions
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Leading the industry with innovative mining technologies and sustainable practices for over three decades.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center mx-auto"
-            >
-              Explore Our Services
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </motion.button>
-          </motion.div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroBg}
+            alt="Mining operations"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="about" className="py-20 bg-gray-800">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Why Choose Us</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              We combine cutting-edge technology with decades of expertise to deliver exceptional mining solutions.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "Safety First",
-                description: "Comprehensive safety protocols and training programs ensuring zero accidents."
-              },
-              {
-                icon: Zap,
-                title: "Advanced Technology",
-                description: "State-of-the-art equipment and innovative mining techniques for maximum efficiency."
-              },
-              {
-                icon: Users,
-                title: "Expert Team",
-                description: "Experienced professionals with deep industry knowledge and proven track record."
-              },
-              {
-                icon: Award,
-                title: "Quality Assurance",
-                description: "Rigorous quality control processes ensuring the highest standards in all operations."
-              },
-              {
-                icon: Globe,
-                title: "Global Reach",
-                description: "International operations with local expertise and cultural understanding."
-              },
-              {
-                icon: ArrowRight,
-                title: "Innovation",
-                description: "Continuous research and development to stay ahead of industry trends."
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-700 p-8 rounded-2xl hover:bg-gray-600 transition-colors duration-300"
-              >
-                <feature.icon className="w-12 h-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-gray-300">{feature.description}</p>
-              </motion.div>
-            ))}
+        
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+            Leading the Future of Mining
+          </h1>
+          
+          <p className="text-xl md:text-2xl mb-8 opacity-90 text-white">
+            Discover how Sudbury Mining Corp. is revolutionizing the industry with innovative technology, sustainable practices, and unwavering commitment to safety.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Link to="/services">
+                <span className="inline-flex items-center gap-2">
+                  Explore Our Services
+                  <ChevronRight className="w-5 h-5" />
+                </span>
+              </Link>
+            </Button>
+            
+            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-black">
+              <Link to="/about">
+                Learn More
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Comprehensive mining services from exploration to rehabilitation.
+      <section ref={servicesRef} className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive mining solutions from exploration to rehabilitation, delivered with the highest standards of safety and environmental responsibility.
             </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              "Mineral Exploration",
-              "Mining Operations",
-              "Mineral Processing",
-              "Environmental Rehabilitation"
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 p-8 rounded-2xl border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300"
-              >
-                <h3 className="text-xl font-semibold mb-3">{service}</h3>
-                <p className="text-gray-300">
-                  Professional {service.toLowerCase()} services with industry-leading expertise and technology.
-                </p>
-              </motion.div>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-80`} />
+                  <div className="absolute bottom-4 left-4">
+                    <service.icon className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                  <p className="text-gray-600">{service.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-800">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Ready to discuss your mining project? Contact our experts today.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300"
-            >
-              Contact Us
-            </motion.button>
-          </motion.div>
+      {/* Stats Section */}
+      <section ref={statsRef} className="py-20 px-4 bg-primary text-primary-foreground">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {stats.map((stat, index) => (
+              <div key={index}>
+                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
+                <div className="text-lg opacity-90">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 py-8">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-gray-400">
-            © 2024 Sudbury Mining Corp. All rights reserved.
-          </p>
+      {/* Testimonials Section */}
+      <section ref={testimonialsRef} className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-xl text-gray-600">
+              Trusted by industry leaders worldwide
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="p-8">
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <Quote className="w-8 h-8 text-gray-400 mb-4" />
+                <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
+                <div>
+                  <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                  <div className="text-gray-600">{testimonial.position}</div>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
-      </footer>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-gray-900 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Start Your Mining Project?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Contact us today to discuss how we can help you achieve your mining goals with our proven expertise and innovative solutions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Link to="/contact">
+                Get Started Today
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900">
+              <Link to="/services">
+                View Our Services
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
